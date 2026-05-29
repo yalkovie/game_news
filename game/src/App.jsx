@@ -22,16 +22,22 @@ function App() {
   return (
     <>
     <header>
-      <img src="./images/logo.png" alt="logo" />
-      <h1>GameSpy</h1>
-      <p>Следим за новинками игр</p>
       <div>
-        <a onClick={() => changer_st(true)}>Игры</a>
-        <a onClick={() => changer_st(false)}>Новости</a>
+        <img src="./images/logo.png" alt="logo" />
+        <h1>GameSpy</h1>
       </div>
-      <h2>{isGame === true ? 'Игры' : 'Новости'}</h2>
+      <p>Следим за новинками игр</p>
     </header>
-    {isGame === true ? games.map((game, id) => <Card key={id} game={game}/>) : news.map((arcticle, id) => <NewsCard key={id} arcticle={arcticle}/>)}
+    <nav>
+      <ul>
+        <li><a onClick={() => changer_st(true)}>Игры</a></li>
+        <li><a onClick={() => changer_st(false)}>Новости</a></li>
+      </ul>
+    </nav>
+    <h2>{isGame === true ? 'Игры' : 'Новости'}</h2>
+    <main>
+      {isGame === true ? games.map((game, id) => <Card key={id} game={game}/>) : news.map((arcticle, id) => <NewsCard key={id} arcticle={arcticle}/>)}
+    </main>
     </>
   )
 }

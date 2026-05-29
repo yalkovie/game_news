@@ -1,0 +1,39 @@
+.card {
+    width: 65%;
+    height: fit-content;
+    border: 1px solid white;
+    border-radius: 2vw;
+    background-color: black;
+    padding: 0.5vw 0;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card > h1 {
+    text-align: center;
+    padding: 1vh;
+}
+
+.card > p {
+    padding: 1vw 2vw;
+}
+
+.main_img {
+    width: 50%;
+    height: auto;
+    border-radius: 2vw;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+}
+
+.images > img {
+    width: max-content;
+    height: auto;
+    padding: 0.5vw 1vw;
+    border-radius: 2vw;
+}
