@@ -11,9 +11,26 @@ function App() {
   let [news, setNews] = useState([])
 
   useEffect(() => {
-    fetch("./data/games.json").then(el => el.json()).then(el => setGames(el))
-    fetch("./data/news.json").then(el => el.json()).then(el => setNews(el))
-  }, [])
+    // Загрузка данных об играх
+    fetch( 'http://localhost:3000/games', {
+        method: 'GET', // Метод запроса
+        headers: { 'Content-Type': 'application/json'}  // Указываем тип содержимого
+    })
+    .then(response => response.json()) // Получаем ответ в формате JSON
+    .then(data => {
+        setGames(data)
+    })
+
+    // Загрузка новостей
+    fetch( 'http://localhost:3000/news', {
+        method: 'GET', // Метод запроса
+        headers: { 'Content-Type': 'application/json'}  // Указываем тип содержимого
+    })
+    .then(response => response.json()) // Получаем ответ в формате JSON
+    .then(data => {
+        setNews(data)
+    })
+      }, [])
 
   function changer_st(state) {
     setIsGame(state)
